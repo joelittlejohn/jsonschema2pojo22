@@ -1,0 +1,21 @@
+{
+    "type" : "object",
+    "deserializationClassProperty":{
+        "propertyName":"discriminatorValue",
+        "children":
+            [
+                {
+                    "className": "ChildArraySchema1",
+                    "value": "OBJ_1"
+                }
+            ]
+    },
+    "properties" : {
+        "propertyOfParent" : {
+            "type" : "string"
+        },
+        "deserializationClassProperty":{
+            "type" : "string"
+        }
+    }
+}
