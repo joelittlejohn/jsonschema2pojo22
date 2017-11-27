@@ -723,6 +723,14 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
     private String targetLanguage = "java";
 
     /**
+     * Whether JSON field names should be converted to lowercase before generating class, property and method names. 
+     *      
+     * @parameter expression="${jsonschema2pojo.forceCamelCase}"
+     *            default-value="false"
+     */
+    private boolean forceCamelCase = false;
+
+    /**
      * Executes the plugin, to read the given source and behavioural properties
      * and generate POJOs. The current implementation acts as a wrapper around
      * the command line interface.
@@ -1124,5 +1132,10 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
     @Override
     public Language getTargetLanguage() {
         return Language.valueOf(targetLanguage.toUpperCase());
+    }
+
+    @Override
+    public boolean isForceCamelCase() {
+        return forceCamelCase;
     }
 }

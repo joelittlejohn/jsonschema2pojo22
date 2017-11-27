@@ -176,6 +176,8 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
 
     private Language targetLanguage = Language.JAVA;
     
+	private boolean forceCamelCase = false;
+    
     /**
      * Execute this task (it's expected that all relevant setters will have been
      * called by Ant to provide task configuration <em>before</em> this method
@@ -862,6 +864,15 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
         this.targetLanguage = targetLanguage;
     }
 
+    /**
+     * Sets the 'forceCamelCase' property of this class
+     *
+     * @param forceCamelCase Whether JSON field names should be converted to lowercase before generating class, property and method names. 
+     */
+    public void setForceCamelCase(boolean forceCamelCase) {
+        this.forceCamelCase = forceCamelCase;
+    }
+
     @Override
     public boolean isGenerateBuilders() {
         return generateBuilders;
@@ -1172,6 +1183,11 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
     @Override
     public Language getTargetLanguage() {
         return targetLanguage;
+    }
+    
+    @Override
+    public boolean isForceCamelCase() {
+        return forceCamelCase;
     }
     
 }

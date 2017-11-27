@@ -566,4 +566,11 @@ public interface GenerationConfig {
      */
     Language getTargetLanguage();
     
+    /**
+     * Gets the `forceCamelCase` configuration option.
+     *
+     * @return Whether JSON field names should be converted to lowercase before generating class, property and method names. 
+     */
+    boolean isForceCamelCase();
+    
 }
